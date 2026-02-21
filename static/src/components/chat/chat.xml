@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ai_concierge.Chat" owl="1">
+        <div class="ai-concierge-chat-panel d-flex flex-column h-100 bg-white border-start shadow-sm">
+            <!-- Header -->
+            <div class="p-3 bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fa fa-magic me-2"/>AI Concierge</h5>
+                <button class="btn btn-sm btn-light" t-on-click="props.closeChat"><i class="fa fa-times"/></button>
+            </div>
+
+            <!-- Message Area -->
+            <div class="flex-grow-1 p-3 overflow-auto d-flex flex-column gap-2" style="background-color: #f8f9fa;">
+                <t t-foreach="state.messages" t-as="msg" t-key="msg_index">
+                    <div t-attf-class="message-bubble p-2 rounded {{ msg.role === 'user' ? 'bg-primary text-white align-self-end' : 'bg-white border align-self-start' }}"
+                         style="max-width: 85%;">
+                        <div class="small fw-bold mb-1 opacity-75">
+                            <t t-if="msg.role === 'ai'"><i class="fa fa-robot me-1"/> Copilot</t>
+                            <t t-else=""><i class="fa fa-user me-1"/> Tú</t>
+                        </div>
+                        <div class="text-break" t-esc="msg.content"/>
+                    </div>
+                </t>
+                <div t-if="state.isLoading" class="align-self-start text-muted small mt-2">
+                    <i class="fa fa-circle-o-notch fa-spin me-1"/> El Agente está pensando...
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-3 border-top bg-white">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Pídele algo a tu ERP..." 
+                           t-model="state.inputText" t-on-keydown="onKeydown"/>
+                    <button class="btn btn-primary" t-on-click="sendMessage" t-att-disabled="state.isLoading">
+                        <i class="fa fa-paper-plane"/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

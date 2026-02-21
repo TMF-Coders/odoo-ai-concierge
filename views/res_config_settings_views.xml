@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.ai.concierge</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="AI Concierge" string="AI Concierge" name="ai_concierge">
+                    <block title="Google Agent Development Kit (ADK) Configuration" name="adk_config_settings">
+                        <setting string="Gemini API Key" help="Your Google AI Studio or Vertex API token.">
+                            <field name="ai_concierge_api_key" password="True"/>
+                        </setting>
+                        <setting string="AI Model" help="The reasoning engine backing the agent.">
+                            <field name="ai_concierge_model" widget="radio"/>
+                        </setting>
+                    </block>
+                    <block title="Agent Persona" name="agent_persona_settings">
+                        <setting string="System Prompt" help="The core instructions governing the agent's behavior.">
+                            <field name="ai_concierge_system_prompt"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

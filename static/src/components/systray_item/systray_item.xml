@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ai_concierge.Systray" owl="1">
+        <!-- The icon in the top navigation bar -->
+        <div class="o_systray_item" t-on-click="toggleChat" title="AI Concierge Copilot">
+            <a class="nav-link" href="#" role="button">
+                <i class="fa fa-magic fa-lg"/>
+            </a>
+        </div>
+        
+        <!-- The floating chat panel when active -->
+        <div t-if="state.isOpen" 
+             style="position: fixed; top: 56px; right: 0; bottom: 0; width: 400px; z-index: 1050; transition: transform 0.3s ease-in-out;">
+            <AiConciergeChat closeChat="() => this.closeChat()"/>
+        </div>
+    </t>
+</templates>
