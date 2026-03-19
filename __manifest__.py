@@ -17,8 +17,12 @@ Features:
 - Modern OWL Sidebar Interface.
     """,
     'author': "TMFCoders SL",
+    'website': 'https://tmfcoders.com',
     'category': 'Productivity/Discuss',
     'version': '19.0.1.0.0',
+    'price': 149.00,
+    'currency': 'EUR',
+    'license': 'OPL-1',
     'depends': ['base', 'web', 'mail'],
     'external_dependencies': {
         'python': ['google-adk'],
@@ -41,5 +45,4 @@ Features:
     },
     'installable': True,
     'application': True,
-    'license': 'OPL-1',
 }
