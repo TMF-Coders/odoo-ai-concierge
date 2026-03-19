@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ai_concierge.A2UISurface">
+        <div class="a2ui-surface w-100 mt-2 p-3 rounded-3 border bg-light shadow-sm" style="font-size: 0.9rem;">
+            <t t-if="rootComponentId">
+                <t t-call="ai_concierge.A2UIComponent">
+                    <t t-set="compId" t-value="rootComponentId"/>
+                </t>
+            </t>
+        </div>
+    </t>
+
+    <t t-name="ai_concierge.A2UIComponent">
+        <t t-set="comp" t-value="components[compId]"/>
+        
+        <t t-if="!comp">
+            <div class="alert alert-danger p-1 small m-0" style="font-size: 0.6rem;">
+                <i class="fa fa-bug me-1"/>Missing: <t t-esc="compId"/>
+            </div>
+        </t>
+
+        <!-- Column Wrapper -->
+        <div t-if="comp.Column" class="d-flex flex-column gap-2 w-100">
+            <t t-foreach="comp.Column.children.explicitList" t-as="subCompId" t-key="subCompId">
+                <div class="flex-fill">
+                    <t t-call="ai_concierge.A2UIComponent">
+                        <t t-set="compId" t-value="subCompId"/>
+                    </t>
+                </div>
+            </t>
+        </div>
+
+        <!-- Row Wrapper -->
+        <div t-if="comp.Row" class="d-flex flex-row gap-2 align-items-stretch w-100">
+            <t t-foreach="comp.Row.children.explicitList" t-as="subCompId" t-key="subCompId">
+                <div class="flex-fill overflow-hidden" style="min-width: 0;">
+                    <t t-call="ai_concierge.A2UIComponent">
+                        <t t-set="compId" t-value="subCompId"/>
+                    </t>
+                </div>
+            </t>
+        </div>
+
+        <!-- Text Component -->
+        <div t-if="comp.Text" t-att-class="comp.Text.style == 'HEADER' ? 'fw-bold border-bottom pb-1 mb-1 text-primary' : (comp.Text.style == 'PRICE' ? 'fw-bold text-success fs-5' : (comp.Text.style == 'SMALL' ? 'text-muted small italic' : ''))">
+            <t t-esc="resolveValue(comp.Text.text)"/>
+        </div>
+
+        <!-- Card Component -->
+        <div t-if="comp.Card" class="card shadow-sm border-light">
+            <div class="card-body p-2">
+                <t t-call="ai_concierge.A2UIComponent">
+                    <t t-set="compId" t-value="comp.Card.content"/>
+                </t>
+            </div>
+        </div>
+
+        <!-- Image Wrapper -->
+        <div t-if="comp.Image" class="mt-2 mb-2">
+            <img t-att-src="resolveValue(comp.Image.url)" class="img-fluid rounded border shadow-sm" style="max-height: 200px;"/>
+        </div>
+
+        <!-- KPI Component -->
+        <div t-if="comp.KPI" class="kpi-card p-3 bg-light rounded border text-center flex-fill d-flex flex-column justify-content-center shadow-sm" style="min-width: 100px;">
+            <div class="kpi-value fw-bold fs-4 text-primary">
+                <t t-esc="resolveValue(comp.KPI.value)"/>
+            </div>
+            <div class="kpi-label small text-muted text-uppercase fw-semibold" style="letter-spacing: 0.5px;">
+                <t t-esc="resolveValue(comp.KPI.label)"/>
+            </div>
+        </div>
+
+        <!-- Chart Component (Simplified) -->
+        <div t-if="comp.Chart" class="chart-container p-2 bg-white rounded border mt-2 w-100 shadow-sm">
+            <div t-if="comp.Chart.title" class="small fw-bold mb-2 border-bottom pb-1">
+                <t t-esc="resolveValue(comp.Chart.title)"/>
+            </div>
+            <div class="d-flex align-items-end gap-1" style="height: 60px;">
+                <t t-set="data" t-value="resolveValue(comp.Chart.data)"/>
+                <t t-foreach="data || []" t-as="item" t-key="item_index">
+                    <div class="bg-primary-light" 
+                         t-attf-style="width: 100%; height: {{ item.value }}%; background-color: #007bff; opacity: 0.7;"
+                         t-att-title="item.label">
+                    </div>
+                </t>
+            </div>
+        </div>
+
+        <!-- Button Component -->
+        <button t-if="comp.Button" class="btn btn-sm btn-outline-primary w-100 mt-1">
+            <t t-esc="resolveValue(comp.Button.label)"/>
+        </button>
+    </t>
+</templates>

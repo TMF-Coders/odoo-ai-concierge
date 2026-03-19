@@ -1,0 +1,24 @@
+.o_navbar .o_systray_item.ai_concierge_systray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: var(--NavBar-entry-color, white);
+        opacity: var(--NavBar-entry-opacity, 0.9);
+
+        i {
+            color: inherit;
+            vertical-align: middle;
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
