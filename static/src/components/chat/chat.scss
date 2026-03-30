@@ -1,0 +1,116 @@
+.ai-concierge-chat-panel {
+    .bg-primary {
+        background-color: var(--o-navbar-background, #714B67) !important;
+        color: white !important;
+    }
+
+    .ai_concierge_header_title {
+        color: white !important;
+        font-weight: 600;
+
+        i {
+            color: white !important;
+        }
+    }
+
+    .btn-light {
+        color: var(--o-brand-primary, #714B67) !important;
+        border: none;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.1);
+            opacity: 0.7;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .pulse-red {
+        animation: pulse 1.5s infinite;
+        background-color: #fff5f5 !important;
+        border-color: #ff5a5f !important;
+    }
+
+    /* Entity Card Styles */
+    .ai-entity-card {
+        transition: all 0.2s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        max-width: 250px;
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+
+    .ai-entity-card:hover {
+        background-color: #fff !important;
+        border-color: #008784 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Premium Bubbles */
+    .message-bubble {
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .user-bubble {
+        background: var(--o-brand-primary, #714B67);
+        color: white;
+        border-radius: 1.2rem 1.2rem 0.2rem 1.2rem;
+        box-shadow: 0 2px 8px rgba(113, 75, 103, 0.2);
+    }
+
+    .ai-bubble {
+        background: white;
+        color: #333;
+        border-radius: 1.2rem 1.2rem 1.2rem 0.2rem;
+        border: 1px solid #e9ecef;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Scrollbar */
+    .overflow-auto {
+        scrollbar-width: thin;
+        scrollbar-color: #dee2e6 transparent;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #dee2e6;
+            border-radius: 20px;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

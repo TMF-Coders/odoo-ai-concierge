@@ -17,8 +17,12 @@ Features:
 - Modern OWL Sidebar Interface.
     """,
     'author': "TMFCoders SL",
+    'website': 'https://tmfcoders.com',
     'category': 'Productivity/Discuss',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
+    'price': 149.00,
+    'currency': 'EUR',
+    'license': 'OPL-1',
     'depends': ['base', 'web', 'mail'],
     'external_dependencies': {
         'python': ['google-adk'],
@@ -30,12 +34,15 @@ Features:
     'assets': {
         'web.assets_backend': [
             'ai_concierge/static/src/components/chat/chat.js',
+            'ai_concierge/static/src/components/chat/a2ui_surface.js',
             'ai_concierge/static/src/components/chat/chat.xml',
+            'ai_concierge/static/src/components/chat/a2ui_surface.xml',
+            'ai_concierge/static/src/components/chat/chat.scss',
             'ai_concierge/static/src/components/systray_item/systray_item.js',
             'ai_concierge/static/src/components/systray_item/systray_item.xml',
+            'ai_concierge/static/src/components/systray_item/systray_item.scss',
         ],
     },
     'installable': True,
     'application': True,
-    'license': 'OPL-1',
 }

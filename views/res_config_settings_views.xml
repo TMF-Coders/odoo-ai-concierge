@@ -18,7 +18,9 @@
                     </block>
                     <block title="Agent Persona" name="agent_persona_settings">
                         <setting string="System Prompt" help="The core instructions governing the agent's behavior.">
-                            <field name="ai_concierge_system_prompt"/>
+                            <div class="content-group">
+                                <field name="ai_concierge_system_prompt" placeholder="Define the agent personality..." class="w-100" widget="text"/>
+                            </div>
                         </setting>
                     </block>
                 </app>
