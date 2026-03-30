@@ -19,6 +19,7 @@ Features:
     'author': "TMFCoders SL",
     'website': 'https://tmfcoders.com',
     'category': 'Productivity/Discuss',
+    'images': ['static/description/main_screenshot.png'],
     'version': '19.0.1.0.0',
     'price': 149.00,
     'currency': 'EUR',
