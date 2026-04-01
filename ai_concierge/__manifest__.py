@@ -22,7 +22,7 @@ Target Audience: Built for any sector (Services, Retail, Logistics, Manufacturin
     'website': 'https://tmfcoders.com',
     'category': 'Productivity/Discuss',
     'images': ['static/description/banner.png', 'static/description/screenshot_1.png', 'static/description/screenshot_2.png'],
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.0.1',
     'price': 89.00,
     'currency': 'EUR',
     'license': 'OPL-1',
