@@ -1,11 +1,11 @@
-# AI Concierge (Odoo Copilot) powered by Google ADK
+# AI Concierge (Odoo Copilot)
 
-This application transforms Odoo 18 by embedding a conversational, action-oriented AI Assistant directly into the user interface. Powered by the **Google Agent Development Kit (ADK)** and the Gemini model family.
+This application transforms Odoo 19 by embedding a conversational, action-oriented AI Assistant directly into the user interface. Powered by the **Google Agent Development Kit (ADK)** and the Gemini model family.
 
 ## Features
 - **Native Odoo Experience:** A floating OWL Chat component always available in the Systray.
 - **Agentic Navigation:** Ask the AI to "Take me to yesterday's sales" and watch the Odoo UI navigate automatically.
-- **Data Searching & Summarization:** The Agent can query the live Postgres database to generate reports on the fly.
+- **Data Searching & Summarization:** The Agent can query the live Postgres database to generate reports on the fly across CRM, Inventory, Sales, and Accounting.
 - **100% RBAC Secure:** All AI database interactions are executed using Odoo's internal `self.env`, guaranteeing that the AI can only read or write records the active human user is permitted to see.
 
 ## Installation & Configuration

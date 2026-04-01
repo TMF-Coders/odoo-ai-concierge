@@ -1,27 +1,29 @@
 # -*- coding: utf-8 -*-
 {
     'name': "AI Concierge (Odoo Copilot)",
-    'summary': "Native LLM Google ADK Agent integrated into Odoo",
+    'summary': "Universal LLM Agent integrated into Odoo (Google ADK)",
     'description': """
-AI Concierge (Copilot)
-======================
+AI Concierge (Odoo Copilot)
+===========================
 This application embeds a powerful AI assistant powered by Google Agent Development Kit (ADK) directly into your Odoo ERP.
 It operates completely within Odoo's security model (RBAC), capable of answering operational questions, navigating the interface, 
-and automating tasks securely using 'FunctionTool's.
+and automating tasks securely across any module (CRM, Sales, Inventory, Accounting, etc.) using 'FunctionTool's.
 
 Features:
-- Global Configuration (API Key & Model Selection).
-- Native ADK Orchestration.
-- Extensible Tool Registry.
-- Persistent Chat History.
+- Global Configuration (API Key & Model Selection, supports Gemini & OpenAI).
+- Native ADK Orchestration & Autonomous Navigation.
+- Extensible Tool Registry for any Odoo Model.
+- Persistent Chat History & Context Awareness.
 - Modern OWL Sidebar Interface.
+
+Target Audience: Built for any sector (Services, Retail, Logistics, Manufacturing, etc.).
     """,
     'author': "TMFCoders SL",
     'website': 'https://tmfcoders.com',
     'category': 'Productivity/Discuss',
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.png', 'static/description/screenshot_1.png', 'static/description/screenshot_2.png'],
     'version': '19.0.1.0.0',
-    'price': 149.00,
+    'price': 89.00,
     'currency': 'EUR',
     'license': 'OPL-1',
     'depends': ['base', 'web', 'mail'],

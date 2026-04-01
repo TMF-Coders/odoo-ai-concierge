@@ -406,4 +406,7 @@ class AiTools(models.AbstractModel):
             'get_dashboard_data': get_dashboard_data,
             'update_dashboard_data': update_dashboard_data,
             'search_attachments': search_attachments,
+            'list_dashboard_groups': list_dashboard_groups,
+            'list_dashboards': list_dashboards,
+            'create_dashboard': create_dashboard,
         }
